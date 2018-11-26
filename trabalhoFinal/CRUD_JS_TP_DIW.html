@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Cadastro de cartas de Magic</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="icon" href="favicon.png">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<h2><strong>Suas Cartas: </strong></h2>
+				</div>
+				</br>
+				</br>
+				<div class="col-md-2">
+					<div>
+						<label>Buscar:</label>
+						<input type="text" class="form-control" value="" id="txt-filtrar"> 
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="pull-right">
+						<button type="button" id="btn-adicionar" class="btn btn-primary" onclick="adicionar()">Adicionar</button>
+					</div>
+				</div>
+			</div>
+			</br>
+			</br>
+			<div class="row">
+				<table class="table table-hover" id="table-cartas">
+					<tbody>
+						<tr>
+							<th>id</th><th>Nome</th><th>Edicao</th><th>Detalhes</th><th>Excluir</th>
+						</tr>                                 
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="modal-detalhes" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                        <h4 class="modal-title">Detalhes da carta</h4>
+                    </div>
+                    <div class="modal-body">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Nome:</label>
+									<input type="text" class="form-control" value="" id="txt-nome">                                
+								</div>
+								<div class="form-group">                                
+									<label>Edicao:</label>
+									<input type="text" class="form-control" value="" id="txt-edicao">                                
+								</div>      
+								<div class="form-group">                                
+									<label>Tipo:</label>
+									<input type="text" class="form-control" value="" id="txt-tipo">                                
+								</div>         
+								<div class="form-group">                                
+									<label>CMC:</label>
+									<input type="text" class="form-control" value="" id="txt-cmc">                                
+								</div>
+								<div class="form-group">                                
+									<label>Ilustrador:</label>
+									<input type="text" class="form-control" value="" id="txt-ilustrador">                                
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div>
+									<br/><br/>
+									<img id="preview" src="noimage.jpg" width="250px" height="300px"/><br/>
+									<input type="file" id="image" style="display: none;"/>
+									<!--<input type="hidden" style="display: none" value="0" name="remove" id="remove">-->
+								</div>
+							</div>
+						</div>
+                        <div class="form-group">
+							<label>Cor:</label>
+							</br>							
+                            <div class="checkbox-inline">
+                                <label style="color:blue;"><input class="check-color" type="checkbox" id="check-azul">Azul</label>
+                            </div>                                
+                            <div class="checkbox-inline">
+                                <label style="color:yellow;"><input class="check-color" type="checkbox" id="check-branco">Branco</label>
+                            </div>
+							<div class="checkbox-inline">
+                                <label><input type="checkbox" class="check-color" id="check-preto">Preto</label>
+                            </div>
+							<div class="checkbox-inline">
+                                <label style="color:green;"><input class="check-color" type="checkbox" id="check-verde">Verde</label>
+                            </div> 
+							<div class="checkbox-inline">
+                                <label style="color:red;"><input class="check-color" type="checkbox" id="check-vermelho">Vermelho</label>
+                            </div> 							
+                        </div>
+						<div class="form-group">                                
+                            <label>Imagem:</label>
+                            <input type="file" name="pic" accept="image/*" class="form-control" value="" id="btn-imagem" onclick="changeProfile()">                                
+                        </div>	
+                    </div>
+                    <div class="modal-footer">                
+                        <button type="button" id="btn-cancel-modal" class="btn btn-default btn-clean" data-dismiss="modal">Cancelar</button>
+                        <button type="button" id="btn-confirm-modal" class="btn btn-success btn-clean" data-dismiss="modal">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+	<script type="text/javascript" src="Interface.js"></script>
+	<script type="text/javascript" src="Crud.js"></script>
+	<script type="text/javascript" src="Cards.js"></script>
+	</body>
+</html>
